@@ -33,7 +33,7 @@ Used stack technologies:
 ![Image of Arch](https://github.com/SlartiBartFast-art/job4j_auth/blob/master/image/Screenshot_5.jpg)
   
 Вы можете удалить существующего работника из БД
-curl -i -X DELETE http://localhost:8080/employeereport/4
+- curl -i -X DELETE http://localhost:8080/employeereport/10
 
 ![Image of Arch](https://github.com/SlartiBartFast-art/job4j_auth/blob/master/image/Screenshot_4.jpg)
 ![Image of Arch](https://github.com/SlartiBartFast-art/job4j_auth/blob/master/image/Screenshot_3.jpg)

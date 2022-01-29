@@ -1,3 +1,4 @@
+/*First schema DB create 27.01.22*/
 create table person
 (
     id       serial primary key not null,

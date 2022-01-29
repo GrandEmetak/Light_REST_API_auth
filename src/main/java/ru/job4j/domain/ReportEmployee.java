@@ -4,6 +4,9 @@ import lombok.Data;
 
 import java.sql.Timestamp;
 
+/**
+ *
+ */
 @Data
 public class ReportEmployee {
 
@@ -17,7 +20,9 @@ public class ReportEmployee {
 
     /**
      * r.created = new Timestamp(System.currentTimeMillis());
-     * т.е. при каждом запросе на формирование отчета у нас будет генерироваться новый отчет с новой датой.
+     * т.е. при каждом запросе на формирование отчета у нас будет генерироваться новый отчет
+     * с новой датой.
+     *
      * @param id
      * @param name
      * @param employee
@@ -29,7 +34,6 @@ public class ReportEmployee {
         r.name = name;
         r.employee = employee;
         r.created = new Timestamp(System.currentTimeMillis());
-        System.out.println("createReportEmployee");
         return r;
     }
 }

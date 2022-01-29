@@ -8,8 +8,7 @@ import java.sql.Timestamp;
  * Добавим Bean в класс запуска приложения:
  * -@Bean
  * public RestTemplate getTemplate() {
- *     return new RestTemplate();
- * }
+ *     return new RestTemplate(); }
  */
 @Data
 public class Report {

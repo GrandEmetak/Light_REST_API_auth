@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 
 /**
- * Класс Сервис по обращению с Работниками
+ * Класс Сервис по обращению с Работниками Employee
  */
 @Service
 public class EmployeeService {
@@ -22,6 +22,7 @@ public class EmployeeService {
 
     /**
      * метод получения всех сотрудников со всеми их аккаунтами
+     *
      * @return
      */
     public Iterable<Employee> findAll() {
@@ -34,6 +35,7 @@ public class EmployeeService {
 
     /**
      * добавление нового аккаунта
+     *
      * @param employee
      * @return
      */
@@ -44,7 +46,8 @@ public class EmployeeService {
     }
 
     /**
-     *удаление существующих аккаунтов.
+     * удаление существующих аккаунтов.
+     *
      * @param employee
      */
     public void delete(Employee employee) {

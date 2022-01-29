@@ -11,6 +11,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+/**
+ * Самая главная часть - это создание Rest контроллера.
+ * Обычно Rest для передачи данных использует либо JSON либо XML.
+ * В проекте будет использовать JSON.
+ * контроллер EmployeeController,  в котором методы получения всех
+ * сотрудников со всеми их аккаунтами, добавление нового аккаунта,
+ * изменение и удаление существующих аккаунтов.
+ */
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {
@@ -53,10 +61,9 @@ public class EmployeeController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable int id) {
-       Employee employee = new Employee();
+        Employee employee = new Employee();
         employee.setId(id);
         this.employeeService.delete(employee);
         return ResponseEntity.ok().build();
     }
-
 }

@@ -7,7 +7,6 @@ import javax.persistence.*;
 
 /**
  * Аналог Аутентификации, роли доступа предоставленной сотруднику
- * ! использована библиотека Lombok
  */
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
@@ -29,7 +28,7 @@ public class Person {
     public Person() {
     }
 
-  public static Person of(int id, String login, String password) {
+    public static Person of(int id, String login, String password) {
         Person person = new Person();
         person.id = id;
         person.login = login;

@@ -14,14 +14,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 1. Интеграция Rest сервисов через RestTemplate [#96916]
- * Уровень : 3. МидлКатегория : 3.4. SpringТопик : 3.4.8. Rest
- *
  * Spring boot имеет удобный механизм интеграции Rest сервисов.
  * RestTemplate - позволяет осуществлять вывозы стороннего REST API.
- * в нем мы объявили поле RestTemplate rest с аннотацией @Autowired, поле будет проинициализировано значением бина,
+ * в нем мы объявили поле RestTemplate rest с аннотацией @Autowired,
+ * поле будет проинициализировано значением бина,
  * который мы объявили ранее в Main class-Job4jAuthApplication.
- * акже мы объявили 2 константы, которые мы будем использовать
+ * также мы объявили 2 константы, которые мы будем использовать
  * далее для реализации методов в нашем RestController.
  */
 @RestController
@@ -38,6 +36,7 @@ public class ReportController {
     /**
      * GET /person/ - получить список пользователей.
      * метод для получения отчета со всем списком Person
+     *
      * @return
      */
     @GetMapping("/")
@@ -45,7 +44,8 @@ public class ReportController {
         List<Report> rsl = new ArrayList<>();
         List<Person> persons = rest.exchange(
                 API,
-                HttpMethod.GET, null, new ParameterizedTypeReference<List<Person>>() { }
+                HttpMethod.GET, null, new ParameterizedTypeReference<List<Person>>() {
+                }
         ).getBody();
         for (Person person : persons) {
             Report report = Report.of(1, "First", person);
@@ -67,6 +67,7 @@ public class ReportController {
      * Dload  Upload   Total   Spent    Left  Speed
      * 100    95    0    51  100    44    117    101 --:--:-- --:--:-- --:--:--
      * 219{"id":5,"login":"job4j@gmail.com","password":"123"}
+     *
      * @param person
      * @return
      */
@@ -80,13 +81,13 @@ public class ReportController {
     }
 
     /**
-     *PUT /person/ - обновить пользователя.
+     * PUT /person/ - обновить пользователя.
      * выполняем следующий запрос: одной строкой
      * curl -i -H 'Content-Type: application/json' -X PUT -d
      * '{"id":"13","login":"support@job4j.com","password":"123"}' http://localhost:8080/report/
      * !!!
-     *  Важно понимать, что если такой записи, которую мы передаем в запросе не будет в БД,
-     *  то вместо замены будет выполнена вставка.
+     * Важно понимать, что если такой записи, которую мы передаем в запросе не будет в БД,
+     * то вместо замены будет выполнена вставка.
      *
      * @param person
      * @return
@@ -103,6 +104,7 @@ public class ReportController {
      * curl -i -X DELETE http://localhost:8080/report/5
      * private static final String API_ID = "http://localhost:8080/person/{id}";
      * Переменная API_ID - содержит параметре {id}, который проставляется в аргументах метода.
+     *
      * @param id
      * @return
      */

@@ -15,12 +15,11 @@ import java.util.List;
 
 /**
  * Класс Отчетов по существующим Employee + CRUD
- * 1. Интеграция Rest сервисов через RestTemplate [#96916]
- * Уровень : 3. МидлКатегория : 3.4. SpringТопик : 3.4.8. Rest
- * <p>
+ *
  * Spring boot имеет удобный механизм интеграции Rest сервисов.
  * RestTemplate - позволяет осуществлять вывозы стороннего REST API.
- * в нем мы объявили поле RestTemplate rest с аннотацией @Autowired, поле будет проинициализировано значением бина,
+ * в нем мы объявили поле RestTemplate rest с аннотацией @Autowired,
+ * поле будет проинициализировано значением бина,
  * который мы объявили ранее в Main class-Job4jAuthApplication.
  * акже мы объявили 2 константы, которые мы будем использовать
  * далее для реализации методов в нашем RestController.
@@ -54,7 +53,6 @@ public class EmployeeReportController {
                 }
         ).getBody();
         for (Employee employee : employees) {
-            System.out.println("fore");
             ReportEmployee reportEmps = ReportEmployee.of(1, "First", employee);
             rsl.add(reportEmps);
         }
@@ -84,7 +82,7 @@ public class EmployeeReportController {
     }
 
       /**
-     *PUT /employee/ - обновить пользователя.
+     * PUT /employee/ - обновить пользователя.
      * выполняем следующий запрос: одной строкой
      * curl -i -H 'Content-Type: application/json' -X PUT -d
      * '{"id":"4","name":"John","surname":"Conor","inn":"0000001"}' http://localhost:8080/employeereport/
@@ -100,6 +98,7 @@ public class EmployeeReportController {
         rest.put(API, employee);
         return ResponseEntity.ok().build();
     }
+
 
     /**
      * DELETE /person/ - удалить пользователя.

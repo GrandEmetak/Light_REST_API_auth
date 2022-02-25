@@ -43,3 +43,4 @@ Used stack technologies:
 В свою очередь в браузере при желании вы можете тоже получить отчет от текущих сотрудниках и их ролях авторизации,
 который будет след вида:
 ![Image of Arch](https://github.com/SlartiBartFast-art/job4j_auth/blob/master/image/Screenshot_6.jpg)
+

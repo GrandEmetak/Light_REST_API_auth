@@ -1,11 +1,10 @@
-#Реализация REST API на Spring Boot.
+# Реализация REST API на Spring Boot.
 
 ![GitHub top language](https://img.shields.io/github/languages/top/SlartiBartFast-art/job4j_auth?logo=java&logoColor=red)
 ![GitHub last commit](https://img.shields.io/github/last-commit/SlartiBartFast-art/job4j_auth?logo=github)
 
 Это простой проект,
-представляющий из себя знакомство с RestFull API архитектурой
-- архитектура клиент-серверного приложения базирующаяся на 6 принципах.
+представляет собой знакомство с RestFull API архитектурой клиент-серверного приложения
 
 Used stack technologies:
 

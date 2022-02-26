@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 /**
  * 0. RESTFull. Описание архитектуры [#6884]
- * Уровень : 3. МидлКатегория : 3.4. SpringТопик : 3.4.8. Rest
+ * Уровень : 3. Мидл Категория : 3.4. SpringТопик : 3.4.8. Rest
  * 3. Составить полноценные junit тесты.
  */
 @SpringBootTest

@@ -1,5 +1,6 @@
 # Реализация REST API на Spring Boot.
 
+[![Build Status](https://app.travis-ci.com/SlartiBartFast-art/job4j_auth.svg?branch=master)](https://app.travis-ci.com/SlartiBartFast-art/job4j_auth)
 ![GitHub top language](https://img.shields.io/github/languages/top/SlartiBartFast-art/job4j_auth?logo=java&logoColor=red)
 ![GitHub last commit](https://img.shields.io/github/last-commit/SlartiBartFast-art/job4j_auth?logo=github)
 

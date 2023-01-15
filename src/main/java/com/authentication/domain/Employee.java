@@ -1,35 +1,27 @@
 package com.authentication.domain;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-
 import java.util.List;
+import java.util.Objects;
 
 /**
  * модель данных Employee - сотрудник компании.
- * -. Модель Employee содержит обязательно данные: имя и фамилия,
+ * Модель Employee содержит обязательно данные:
+ * имя и фамилия,
  * ИНН, дата найма, а также ссылку на список его аккаунтов
  * (в качестве аккаунтов используйте модель Person, в котором используются
  * поля login и пароль), которыми сотрудник пользуется для доступа к ресурсам
  * корпоративной площадки.
- * !!! Использована Однонаправленная ассоциация «один ко многим»
- * -@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
- * - @JoinColumn(name = "employee_id") //“fk_employee”)
- * private List<Person> persons = new ArrayList<>();
  */
-@Data
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+
 @Entity
 @Table(name = "employee")
 public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @EqualsAndHashCode.Include
     private int id;
 
     @Column(name = "name")
@@ -59,5 +51,23 @@ public class Employee {
         employee.hireDate = hireDate;
         employee.persons = persons;
         return employee;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return id == employee.id
+                && inn == employee.inn
+                && Objects.equals(name, employee.name)
+                && Objects.equals(surname, employee.surname)
+                && Objects.equals(hireDate, employee.hireDate)
+                && Objects.equals(persons, employee.persons);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, surname, inn, hireDate, persons);
     }
 }

@@ -5,13 +5,11 @@ import lombok.Data;
 import java.sql.Timestamp;
 
 /**
- * Добавим Bean в класс запуска приложения:
- * -@Bean
- * public RestTemplate getTemplate() {
- *     return new RestTemplate(); }
+ * Отчеты
  */
 @Data
 public class Report {
+
     private int id;
 
     private String name;
@@ -21,8 +19,8 @@ public class Report {
     private Person person;
 
     /**
-     * r.created = new Timestamp(System.currentTimeMillis());
      * т.е. при каждом запросе на формирование отчета у нас будет генерироваться новый отчет с новой датой.
+     *
      * @param id
      * @param name
      * @param person

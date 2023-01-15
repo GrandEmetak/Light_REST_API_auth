@@ -19,14 +19,8 @@ public class ReportEmployee {
     private Employee employee;
 
     /**
-     * r.created = new Timestamp(System.currentTimeMillis());
      * т.е. при каждом запросе на формирование отчета у нас будет генерироваться новый отчет
      * с новой датой.
-     *
-     * @param id
-     * @param name
-     * @param employee
-     * @return
      */
     public static ReportEmployee of(int id, String name, Employee employee) {
         ReportEmployee r = new ReportEmployee();

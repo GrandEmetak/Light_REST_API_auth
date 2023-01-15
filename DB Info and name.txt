@@ -1,11 +1,102 @@
-0. RESTFull. Описание архитектуры [#6884 #257063]
- Уровень : 3. Мидл Категория : 3.4. SpringТопик : 3.4.8. Rest
+info for users
+RESTFull. Описание архитектуры
 
 Создадим базу данных с именем fullstack_auth
 Создадим схему. db/update_001.sql
 
-Таска 1. Интеграция Rest сервисов через RestTemplate [#96916]
+Интеграция Rest сервисов через RestTemplate [#96916]
 Схема таблиц БД изменена на Создадим схему. db/update_002.sql
 
 файл конфигурации Спринга добавлено автоматическая генерация таблиц при поднятии приложения
 spring.jpa.hibernate.ddl-auto=update
+
+---------------
+info for users
+
+class EmployeeReportController {
+    /**
+     * запрос имеет вид одной строкой
+     * curl -H 'Content-Type: application/json' -X POST -d
+     * '{"name":"Petr","surname":"Shirokov","inn":"0258741"}' http://localhost:8080/employeereport/
+     * String API -Переменная API_ID - содержит параметре {id}, который проставляется в аргументах метода.
+     * Spring запущен и происходит запрос Hibernate
+     * Hibernate: insert into person (login, password) values (?, ?)
+     * что в консоли GitBush
+     * Dload  Upload   Total   Spent    Left  Speed
+     * 100    95    0    51  100    44    117    101 --:--:-- --:--:-- --:--:--
+     * 219{"id":5,"login":"job4j@gmail.com","password":"123"}
+     * @param employee
+     * @return
+     */
+    @PostMapping("/"){}
+
+   /**
+         * выполняем следующий запрос: одной строкой
+         * curl -i -H 'Content-Type: application/json' -X PUT -d
+         * '{"id":"4","name":"John","surname":"Conor","inn":"0000001"}' http://localhost:8080/employeereport/
+         * !!!
+         *  Важно понимать, что если такой записи, которую мы передаем в запросе не будет в БД,
+         *  то вместо замены будет выполнена вставка.
+         *
+         * @param employee
+         * @return
+         */
+        @PutMapping("/")
+
+   /**
+             * DELETE /person/ - удалить пользователя.
+             * Выполним запрос, удаляя запись с id = 5:
+             * curl -i -X DELETE http://localhost:8080/employeereport/4
+             * private static final String API_ID = "http://localhost:8080/employee/{id}";
+             * Переменная API_ID - содержит параметре {id}, который проставляется в аргументах метода.
+             * @param id
+             * @return
+             */
+            @DeleteMapping("/{id}")
+
+
+class ReportController {
+ * -@PostMapping("/")
+     * POST /person/ - создать пользователя.
+     * запрос имеет вид одной строкой
+     * curl -H 'Content-Type: application/json' -X POST -d
+     * '{"login":"job4j@gmail.com","password":"123"}' http://localhost:8080/report/
+     * String API -Переменная API_ID - содержит параметре {id}, который проставляется в аргументах метода.
+     * Spring запущен и происходит запрос Hibernate
+     * Hibernate: insert into person (login, password) values (?, ?)
+     * что в консоли GitBush
+     * Dload  Upload   Total   Spent    Left  Speed
+     * 100    95    0    51  100    44    117    101 --:--:-- --:--:-- --:--:--
+     * 219{"id":5,"login":"job4j@gmail.com","password":"123"}
+     *
+     * @param person
+     * @return
+     */
+    @PostMapping("/")
+
+ /**
+         * PUT /person/ - обновить пользователя.
+         * выполняем следующий запрос: одной строкой
+         * curl -i -H 'Content-Type: application/json' -X PUT -d
+         * '{"id":"13","login":"support@job4j.com","password":"123"}' http://localhost:8080/report/
+         * !!!
+         * Важно понимать, что если такой записи, которую мы передаем в запросе не будет в БД,
+         * то вместо замены будет выполнена вставка.
+         *
+         * @param person
+         * @return
+         */
+        @PutMapping("/")
+
+ /**
+             * DELETE /person/ - удалить пользователя.
+             * Выполним запрос, удаляя запись с id = 5:
+             * curl -i -X DELETE http://localhost:8080/report/5
+             * private static final String API_ID = "http://localhost:8080/person/{id}";
+             * Переменная API_ID - содержит параметре {id}, который проставляется в аргументах метода.
+             *
+             * @param id
+             * @return
+             */
+            @DeleteMapping("/{id}")
+}

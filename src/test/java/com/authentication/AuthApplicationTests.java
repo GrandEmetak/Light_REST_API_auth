@@ -1,4 +1,4 @@
-package ru.job4j;
+package com.authentication;
 
 import com.google.gson.Gson;
 import org.junit.jupiter.api.Test;
@@ -6,12 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
-import ru.job4j.domain.Person;
-import ru.job4j.servise.PersonService;
+import com.authentication.domain.Person;
+import com.authentication.servise.PersonService;
 
 import java.util.Optional;
 
@@ -27,7 +25,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @SpringBootTest
 @AutoConfigureMockMvc
-class Job4jAuthApplicationTests {
+class AuthApplicationTests {
 
     @Autowired
     private MockMvc mockMvc;

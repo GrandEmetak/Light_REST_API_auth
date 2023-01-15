@@ -18,7 +18,7 @@
         <property name="use_sql_comments">true</property> <!-- что бы видеть запросы которые выполняются к БД -->
         <property name="hibernate.jdbc.time_zone">Asia/Yekaterinburg</property><!--  свойство определения часового пояса можно определить на уровне конфигурационного файла-->
 
-        <mapping class="ru.job4j.domain.Person" />
+        <mapping class="com.authentication.domain.Person" />
 
 
 

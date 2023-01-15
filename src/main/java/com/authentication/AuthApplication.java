@@ -1,4 +1,4 @@
-package ru.job4j;
+package com.authentication;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
  * public RestTemplate getTemplate() {
  */
 @SpringBootApplication
-public class Job4jAuthApplication extends SpringBootServletInitializer {
+public class AuthApplication extends SpringBootServletInitializer {
 
     @Bean
     public RestTemplate getTemplate() {
@@ -23,11 +23,11 @@ public class Job4jAuthApplication extends SpringBootServletInitializer {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(Job4jAuthApplication.class);
+        return application.sources(AuthApplication.class);
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(Job4jAuthApplication.class, args);
+        SpringApplication.run(AuthApplication.class, args);
     }
 
 }

@@ -1,7 +1,6 @@
-package ru.job4j.repository;
-import org.springframework.context.annotation.Configuration;
+package com.authentication.repository;
+import com.authentication.domain.Person;
 import org.springframework.data.repository.CrudRepository;
-import ru.job4j.domain.Person;
 
 public interface PersonRepository extends CrudRepository<Person, Integer> {
 }

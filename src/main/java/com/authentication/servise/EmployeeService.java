@@ -1,8 +1,8 @@
-package ru.job4j.servise;
+package com.authentication.servise;
 
+import com.authentication.domain.Employee;
+import com.authentication.repository.EmployeeRepository;
 import org.springframework.stereotype.Service;
-import ru.job4j.domain.Employee;
-import ru.job4j.repository.EmployeeRepository;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;

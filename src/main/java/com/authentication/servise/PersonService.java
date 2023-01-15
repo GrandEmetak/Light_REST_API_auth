@@ -1,10 +1,10 @@
-package ru.job4j.servise;
+package com.authentication.servise;
 
+import com.authentication.domain.Person;
+import com.authentication.repository.PersonRepository;
 import org.springframework.stereotype.Service;
-import ru.job4j.domain.Person;
-import ru.job4j.repository.PersonRepository;
+
 import java.util.Optional;
-import java.util.List;
 
 @Service
 public class PersonService {

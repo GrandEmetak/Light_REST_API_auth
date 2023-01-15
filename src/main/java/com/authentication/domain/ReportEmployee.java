@@ -1,4 +1,4 @@
-package ru.job4j.domain;
+package com.authentication.domain;
 
 import lombok.Data;
 

@@ -1,5 +1,7 @@
-package ru.job4j.controller;
+package com.authentication.controller;
 
+import com.authentication.domain.Person;
+import com.authentication.domain.Report;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
@@ -7,8 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
-import ru.job4j.domain.Person;
-import ru.job4j.domain.Report;
 
 import java.util.ArrayList;
 import java.util.List;

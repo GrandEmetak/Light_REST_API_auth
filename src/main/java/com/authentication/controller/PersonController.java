@@ -1,11 +1,10 @@
-package ru.job4j.controller;
+package com.authentication.controller;
 
+import com.authentication.domain.Person;
+import com.authentication.servise.PersonService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.job4j.domain.Person;
-
-import ru.job4j.servise.PersonService;
 
 import java.util.List;
 import java.util.stream.Collectors;

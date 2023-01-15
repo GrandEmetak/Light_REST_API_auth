@@ -1,7 +1,7 @@
-package ru.job4j.repository;
+package com.authentication.repository;
 
+import com.authentication.domain.Employee;
 import org.springframework.data.repository.CrudRepository;
-import ru.job4j.domain.Employee;
 
 /**
  * Springboot repository Employee

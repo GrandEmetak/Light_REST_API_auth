@@ -14,13 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Spring boot имеет удобный механизм интеграции Rest сервисов.
- * RestTemplate - позволяет осуществлять вывозы стороннего REST API.
- * в нем мы объявили поле RestTemplate rest с аннотацией @Autowired,
- * поле будет проинициализировано значением бина,
- * который мы объявили ранее в Main class-Job4jAuthApplication.
- * также мы объявили 2 константы, которые мы будем использовать
- * далее для реализации методов в нашем RestController.
+ * Отчеты
  */
 @RestController
 @RequestMapping("/report")
@@ -37,7 +31,7 @@ public class ReportController {
      * GET /person/ - получить список пользователей.
      * метод для получения отчета со всем списком Person
      *
-     * @return
+     * @return List Report
      */
     @GetMapping("/")
     public List<Report> findAll() {
@@ -57,19 +51,6 @@ public class ReportController {
     /**
      * -@PostMapping("/")
      * POST /person/ - создать пользователя.
-     * запрос имеет вид одной строкой
-     * curl -H 'Content-Type: application/json' -X POST -d
-     * '{"login":"job4j@gmail.com","password":"123"}' http://localhost:8080/report/
-     * String API -Переменная API_ID - содержит параметре {id}, который проставляется в аргументах метода.
-     * Spring запущен и происходит запрос Hibernate
-     * Hibernate: insert into person (login, password) values (?, ?)
-     * что в консоли GitBush
-     * Dload  Upload   Total   Spent    Left  Speed
-     * 100    95    0    51  100    44    117    101 --:--:-- --:--:-- --:--:--
-     * 219{"id":5,"login":"job4j@gmail.com","password":"123"}
-     *
-     * @param person
-     * @return
      */
     @PostMapping("/")
     public ResponseEntity<Person> create(@RequestBody Person person) {
@@ -82,15 +63,6 @@ public class ReportController {
 
     /**
      * PUT /person/ - обновить пользователя.
-     * выполняем следующий запрос: одной строкой
-     * curl -i -H 'Content-Type: application/json' -X PUT -d
-     * '{"id":"13","login":"support@job4j.com","password":"123"}' http://localhost:8080/report/
-     * !!!
-     * Важно понимать, что если такой записи, которую мы передаем в запросе не будет в БД,
-     * то вместо замены будет выполнена вставка.
-     *
-     * @param person
-     * @return
      */
     @PutMapping("/")
     public ResponseEntity<Void> update(@RequestBody Person person) {
@@ -100,13 +72,6 @@ public class ReportController {
 
     /**
      * DELETE /person/ - удалить пользователя.
-     * Выполним запрос, удаляя запись с id = 5:
-     * curl -i -X DELETE http://localhost:8080/report/5
-     * private static final String API_ID = "http://localhost:8080/person/{id}";
-     * Переменная API_ID - содержит параметре {id}, который проставляется в аргументах метода.
-     *
-     * @param id
-     * @return
      */
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable int id) {

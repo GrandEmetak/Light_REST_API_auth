@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 /**
-*
+ * Информация о ролях доступа предоставленных сотрудникам
  */
 @RestController
 @RequestMapping("/person")

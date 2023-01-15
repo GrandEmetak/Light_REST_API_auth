@@ -8,14 +8,12 @@ create table employee
     hire_date timestamp without time zone not null default now()
 );
 
-insert into employee (name, surname, inn)
-values ('Petr', 'parsentev', '123456');
-insert into employee (name, surname, inn)
-values ('Ivan', 'Sobolev', '234567');
-insert into employee (name, surname, inn)
-values ('Fedor', 'Ivanov', '345678');
+INSERT INTO employee (name, surname, inn)
+VALUES ('Petr', 'Parsentev', '123456'),
+       ('Ivan', 'Sobolev', '234567'),
+       ('Fedor', 'Ivanov', '345678');
 
-create table person
+CREATE TABLE person
 (
     id       serial primary key not null,
     login    varchar(2000),
@@ -23,9 +21,7 @@ create table person
     employee_id int references employee(id)
 );
 
-insert into person (login, password, employee_id)
-values ('parsentev', '123', 1);
-insert into person (login, password, employee_id)
-values ('ivan', '123', 2);
-insert into person (login, password, employee_id)
-values ('dan', '123', 3);
+INSERT INTO person (login, password, employee_id)
+VALUES ('Parsentev', '123', 1),
+       ('Ivanov', '123', 2),
+       ('Blinov', '123', 3);
